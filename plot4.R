@@ -27,21 +27,21 @@
 
 
 ## Create matrix of plots 
-          par(mfrow= c(2,2), mar=c(5.1,4.1,4.1,2.1))
+          par(mfrow= c(2,2))
           
 ## Plot 1: Global Active Power against minute           
           
           with(febpower,  plot(datetime, Global_active_power, ylab = "Global Active Power",
-                               type = "l", ylim = c(0,8)), xlab="")
+                               type = "l",  xlab=""))
           
 ## Plot 2: Voltage against minute
           with(febpower,  plot(datetime, Voltage, ylab = "Voltage",
-                               type = "l", ylim = c(232,250)), xlab="")        
+                               type = "l"))        
 
           
 ## Plot 3: Energy sub metering against minute
-          with(febpower,  plot(datetime, Global_active_power, ylab = "Energy Sub metering",
-                               type = "n", ylim = c(0,40)), xlab="")
+          with(febpower,  plot(datetime, Sub_metering_1, ylab = "Energy Sub metering",
+                               type = "n", xlab=""))
           with(febpower, lines(datetime, Sub_metering_1, col="black")) 
           with(febpower, lines(datetime, Sub_metering_2, col="red"))
           with(febpower, lines(datetime, Sub_metering_3, col="blue"))
@@ -49,7 +49,7 @@
           
 ## Plot 4:   
           with(febpower,  plot(datetime, Global_reactive_power, ylab = "Global_reactive_power",
-                               type = "l", ylim = c(0.0,0.9)), xlab="")   
+                               type = "l"))   
 
           
           
@@ -60,21 +60,21 @@
           png("plot4.png", width = 480, height = 480)
           
           ## Create matrix of plots 
-          par(mfrow= c(2,2), mar=c(3,4.1,4.1,2.1))
+          par(mfrow= c(2,2))
           
           ## Plot 1: Global Active Power against minute           
           
           with(febpower,  plot(datetime, Global_active_power, ylab = "Global Active Power",
-                               type = "l", ylim = c(0,8)), xlab="")
+                               type = "l",  xlab=""))
           
           ## Plot 2: Voltage against minute
           with(febpower,  plot(datetime, Voltage, ylab = "Voltage",
-                               type = "l", ylim = c(232,250)), xlab="")        
+                               type = "l"))        
           
           
           ## Plot 3: Energy sub metering against minute
-          with(febpower,  plot(datetime, Global_active_power, ylab = "Energy Sub metering",
-                               type = "n", ylim = c(0,40)), xlab="")
+          with(febpower,  plot(datetime, Sub_metering_1, ylab = "Energy Sub metering",
+                               type = "n", xlab=""))
           with(febpower, lines(datetime, Sub_metering_1, col="black")) 
           with(febpower, lines(datetime, Sub_metering_2, col="red"))
           with(febpower, lines(datetime, Sub_metering_3, col="blue"))
@@ -82,7 +82,9 @@
           
           ## Plot 4:   
           with(febpower,  plot(datetime, Global_reactive_power, ylab = "Global_reactive_power",
-                               type = "l", ylim = c(0.0,0.9)), xlab="") 
+                               type = "l"))   
+          
+          
               
           dev.off()
 

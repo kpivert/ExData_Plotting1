@@ -14,21 +14,21 @@ unlink(temp)
 
 ## Subset Data for Observations from 2007-02-01 and 2007-02-02
 
-target <- c("2/1/2007", "2/2/2007")
+target <- c("1/2/2007", "2/2/2007")
 febpower <- subset(dat, Date %in% target)
 
 
 ## Change Date and Time 
 
 febpower$datetime <- paste(febpower$Date, febpower$Time)
-febpower$datetime <- strptime(febpower$datetime, "%m/%d/%Y %H:%M:%S")
+febpower$datetime <- strptime(febpower$datetime, "%d/%m/%Y %H:%M:%S")
 
 
 
 ## Create plot 
-par(mar=c(3, 4.1,4.1,2.1))
+par(mar=c(5.1, 4.1,4.1,2.1))
 with(febpower,  plot(datetime, Global_active_power, ylab = "Global Active Power (kilowatts)",
-     type = "l", ylim = c(0,6)), xlab="")
+     type = "l", xlab=""))
 
 
 ## Save Plot 2 as PNG
@@ -39,8 +39,7 @@ png("plot2.png", width = 480, height = 480)
 
 par(mar=c(3, 4.1,4.1,2.1))
 with(febpower,  plot(datetime, Global_active_power, ylab = "Global Active Power (kilowatts)",
-                     type = "l", ylim = c(0,6)), xlab="")
-
+                     type = "l", xlab=""))
 
 dev.off()
 

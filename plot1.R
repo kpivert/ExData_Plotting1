@@ -14,7 +14,7 @@
 
 ## Subset Data for Observations from 2007-02-01 and 2007-02-02
       
-      target <- c("2/1/2007", "2/2/2007")
+      target <- c("1/2/2007", "2/2/2007")
       febpower <- subset(dat, Date %in% target)
           
       
@@ -27,8 +27,8 @@
       
 ## Create Histogram 
       
-      hist(febpower$Global_active_power, xlab = "Global Active Power (kilowatts)", ylab = "Frequency", 
-           col="red", main = "Global Active Power", breaks = 17, ylim = c(0,1200), xlim=c(0,6))
+      hist(febpower$Global_active_power, xlab = "Global Active Power (kilowatts)", 
+           col="red", main = "Global Active Power")
       
 
 ## Save Plot 1 as PNG
@@ -37,8 +37,8 @@
       
       png("plot1.png", width = 480, height = 480)
       
-      hist(febpower$Global_active_power, xlab = "Global Active Power (kilowatts)", ylab = "Frequency", 
-           col="red", main = "Global Active Power", breaks = 17, ylim = c(0,1200), xlim=c(0,6))
+      hist(febpower$Global_active_power, xlab = "Global Active Power (kilowatts)", 
+           col="red", main = "Global Active Power")
       
       
       dev.off()
